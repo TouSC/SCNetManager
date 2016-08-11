@@ -1,6 +1,6 @@
 //
 //  SCNetMethod.m
-//  SCMetroHarbour
+//  
 //
 //  Created by user on 15/4/20.
 //  Copyright (c) 2015年 tousan. All rights reserved.
@@ -54,9 +54,7 @@
     NSString *webURL;
     NSString *interMethod;
     
-#ifdef NET_DEBUG_MODE
     NSLog(@"SCNetworking -----%@",paraArr);
-#endif
     if (paraIndex != paraNameArr.count)
     {
         if(complete)
@@ -152,16 +150,13 @@
     return result;
 }
 
-/** 使用位置-旧的网络请求方法 */
 - (SCNetWorkingResult*)getDataWithMethodName:(NSString*)methodName URLtype:(SCNetURLType)urlType Timeout:(NSUInteger)timeout Sync:(BOOL)isSync Progress:(void(^)(NSURLSessionTask *task))progress Complete:(void(^)(SCNetWorkingResult *result,NSURLSessionTask *task))complete ParaArr:(NSArray*)paraArr;
 {
     NSString *webURL;
     NSString *interMethod;
     if (paraArr.count)
     {
-#ifdef NET_DEBUG_MODE
         NSLog(@"sendPara---%@,%@",methodName,paraArr);
-#endif
     }
     switch (urlType)
     {
@@ -252,7 +247,7 @@
 
 - (SCNetWorkingResult*)parserData:(NSData*)data MethodName:(NSString*)methodName;
 {
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc]initWithData:data options:0 error:nil];
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc]initWithData:data error:nil];
     NSDictionary *dic;
     if (doc)
     {
@@ -262,9 +257,7 @@
     }
     else
     {
-#ifdef NET_DEBUG_MODE
         NSLog(@"%@--解析错误",methodName);
-#endif
     }
     if (dic)
     {

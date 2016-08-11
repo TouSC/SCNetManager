@@ -1,12 +1,10 @@
 //
 //  SCNetWorkingConfig.h
-//  CardAppSample
+//  
 //
 //  Created by 唐绍成 on 16/3/10.
 //  Copyright © 2016年 唐绍成. All rights reserved.
 //
-
-#define NET_DEBUG_MODE
 
 #define NET_URL_ESTATE [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Config" ofType:@"plist"]][[[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Interface" ofType:@"plist"]][@"IsWebLocalURLRelease"] boolValue]?@"WebLocalURL_release":@"WebLocalURL_debug"] //屋苑
 

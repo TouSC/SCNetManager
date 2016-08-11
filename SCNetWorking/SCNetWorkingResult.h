@@ -1,6 +1,6 @@
 //
 //  SCNetResult.h
-//  XStudio
+//  
 //
 //  Created by Tousan on 15/12/16.
 //  Copyright (c) 2015年 Tousan. All rights reserved.
